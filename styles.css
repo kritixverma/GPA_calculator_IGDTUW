@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background: #0d0d0d;
   color: #f5f5f5;
@@ -12,10 +11,12 @@ body {
   line-height: 1.6;
   padding: 2rem 1rem;
 }
+
 .container {
   max-width: 700px;
   margin: 0 auto;
 }
+
 h1 {
   font-size: 2rem;
   font-weight: 900;
@@ -23,20 +24,24 @@ h1 {
   letter-spacing: -1px;
   text-transform: uppercase;
 }
+
 .table-wrapper {
   border: 1px solid #333;
   margin-bottom: 2rem;
   overflow-x: auto;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
 }
+
 thead {
   background: #1a1a1a;
   border-bottom: 2px solid #333;
 }
+
 th {
   padding: 1rem;
   text-align: left;
@@ -46,61 +51,71 @@ th {
   letter-spacing: 1px;
   color: #999;
 }
+
 tbody tr {
   border-bottom: 1px solid #222;
 }
+
 tbody tr:last-child {
   border-bottom: none;
 }
+
 td {
   padding: 1rem;
   vertical-align: middle;
 }
+
 td:first-child {
   color: #aaa;
   font-weight: 500;
   width: 25%;
 }
+
 input[type="number"] {
   width: 90px;
   padding: 0.5rem;
   background: #1a1a1a;
   border: 1px solid #333;
   color: #f5f5f5;
-  font-family: 'Space Mono', monospace;
+  font-family: 'Courier New', monospace;
   font-size: 0.9rem;
   outline: none;
   transition: border-color 0.2s;
 }
+
 input[type="number"]:focus {
   border-color: #666;
 }
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
 .grade-point {
   font-weight: 700;
-  font-family: 'Space Mono', monospace;
   color: #ccc;
 }
+
 .grade {
   font-weight: 800;
   font-size: 1rem;
   letter-spacing: 1px;
   min-width: 30px;
-  font-family: 'Space Mono', monospace;
 }
+
 .actions {
   display: flex;
   gap: 1.5rem;
   margin-bottom: 2rem;
   align-items: center;
 }
+
 .subject-control {
   display: flex;
   gap: 0.75rem;
@@ -108,6 +123,7 @@ input[type="number"] {
   border: 1px solid #333;
   padding: 0.75rem 1rem;
 }
+
 .subject-control span {
   text-transform: uppercase;
   font-weight: 600;
@@ -115,6 +131,7 @@ input[type="number"] {
   letter-spacing: 1px;
   color: #888;
 }
+
 .icon-button {
   width: 32px;
   height: 32px;
@@ -129,13 +146,16 @@ input[type="number"] {
   transition: all 0.15s;
   font-weight: bold;
 }
+
 .icon-button:hover {
   border-color: #666;
   background: #252525;
 }
+
 .icon-button:active {
   transform: scale(0.95);
 }
+
 .calculate-button {
   padding: 0.8rem 2rem;
   background: #f5f5f5;
@@ -150,12 +170,15 @@ input[type="number"] {
   flex: 1;
   max-width: 250px;
 }
+
 .calculate-button:hover {
   background: #e0e0e0;
 }
+
 .calculate-button:active {
   transform: scale(0.98);
 }
+
 .result {
   background: #1a1a1a;
   border: 1px solid #333;
@@ -167,38 +190,46 @@ input[type="number"] {
   color: #666;
   transition: all 0.3s;
 }
+
 .result:not(:empty) {
   color: #f5f5f5;
   border-color: #555;
   background: #181818;
 }
-.result .cgpa-value {
-  font-size: 2.5rem;
+
+.result .gpa-value {
+  font-size: 1.5rem;
   font-weight: 900;
   color: #f5f5f5;
-  margin-left: 1rem;
-  font-family: 'Space Mono', monospace;
+  margin-left: 3rem;
 }
+
 @media (max-width: 600px) {
   h1 {
     font-size: 1.5rem;
   }
+
   th, td {
     padding: 0.7rem 0.5rem;
     font-size: 0.85rem;
   }
+
   input[type="number"] {
     width: 70px;
     padding: 0.4rem;
   }
+
   .actions {
     flex-direction: column;
     gap: 1rem;
   }
+
   .calculate-button {
     max-width: 100%;
   }
-  .result .cgpa-value {
-    font-size: 2rem;
+
+  .result .gpa-value {
+    font-size: 1.5rem;
+    text-align: center;
   }
 }
