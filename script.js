@@ -53,7 +53,7 @@ function calculateGradePoint(grade) {
     }
 }
 
-function calculateCGPA() {
+function calculateGPA() {
     const marksInputs = document.querySelectorAll('.marks');
     const creditsInputs = document.querySelectorAll('.credits');
     const gradePoints = document.querySelectorAll('.grade-point');
@@ -78,8 +78,8 @@ function calculateCGPA() {
         weightedGradePoints += gradePoint * credits;
     });
 
-    const cgpa = totalCredits ? weightedGradePoints / totalCredits : 0;
+    const gpa = totalCredits ? weightedGradePoints / totalCredits : 0;
 
     document.getElementById('result').innerHTML =
-        `Your CGPA: <span class="cgpa-value">${cgpa.toFixed(2)}</span>`;
+        `Your GPA: <span class="gpa-value">${gpa.toFixed(2)}</span>`;
 }
