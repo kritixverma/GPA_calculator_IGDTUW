@@ -70,11 +70,21 @@ h1 {
   padding: 1rem;
   vertical-align: middle;
 }
+.main-table th,
+.main-table td {
+  min-width: 120px;
+  text-align: left;
+}
+
+.main-table th:last-child,
+.main-table td:last-child {
+  min-width: 80px;
+}
 
 .main-table td:first-child {
   color: #aaa;
   font-weight: 500;
-  width: 25%;
+  min-width: 130px;
 }
 
 input[type="number"] {
