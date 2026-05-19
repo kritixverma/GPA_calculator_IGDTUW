@@ -193,5 +193,30 @@ input[type="number"] {
   .result .gpa-value {
     font-size: 1.5rem;
     text-align: center;
-  }
+  } table {
+  width: 60%;
+  margin: auto;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+th {
+  background-color: #4f46e5;
+  color: white;
+  padding: 12px;
+}
+
+td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+tr:hover {
+  background-color: #e0e7ff;
+}
 }
