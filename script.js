@@ -9,6 +9,7 @@ function addRow() {
         <td class="grade"></td>
     `;
     tbody.appendChild(row);
+    updateSubjectNumbers();
 }
 
 function removeLastRow() {
@@ -43,13 +44,14 @@ function calculateGrade(marks) {
 function calculateGradePoint(grade) {
     switch (grade) {
         case 'A+': return 10;
-        case 'A': return 9;
+        case 'A':  return 9;
         case 'B+': return 8;
-        case 'B': return 7;
+        case 'B':  return 7;
         case 'C+': return 6;
-        case 'C': return 5;
-        case 'D': return 4;
-        case 'F': return 0;
+        case 'C':  return 5;
+        case 'D':  return 4;
+        case 'F':  return 0;
+        default:   return 0;
     }
 }
 
@@ -61,25 +63,37 @@ function calculateGPA() {
 
     let totalCredits = 0;
     let weightedGradePoints = 0;
+    let hasValidRow = false;
 
     marksInputs.forEach((input, index) => {
         const marks = parseFloat(input.value);
         const credits = parseFloat(creditsInputs[index].value);
 
-        if (isNaN(marks) || isNaN(credits)) return;
+        if (isNaN(marks) || isNaN(credits)) {
+            grades[index].textContent = '';
+            gradePoints[index].textContent = '';
+            return;
+        }
 
         const grade = calculateGrade(marks);
-        grades[index].textContent = grade;
-
         const gradePoint = calculateGradePoint(grade);
-        gradePoints[index].textContent = gradePoint;
 
+        grades[index].textContent = grade;
+        gradePoints[index].textContent = gradePoint;
         totalCredits += credits;
         weightedGradePoints += gradePoint * credits;
+        hasValidRow = true;
     });
 
-    const gpa = totalCredits ? weightedGradePoints / totalCredits : 0;
+    const resultDiv = document.getElementById('result');
 
-    document.getElementById('result').innerHTML =
-        `Your GPA: <span class="gpa-value">${gpa.toFixed(2)}</span>`;
+    if (!hasValidRow) {
+        resultDiv.innerHTML = `<span style="color:red">Please enter marks and credits for at least one subject.</span>`;
+        resultDiv.style.display = 'block';
+        return;
+    }
+
+    const gpa = weightedGradePoints / totalCredits;
+    resultDiv.innerHTML = `Your GPA: <span class="gpa-value">${gpa.toFixed(2)}</span>`;
+    resultDiv.style.display = 'block';
 }
