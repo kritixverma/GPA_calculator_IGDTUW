@@ -3,6 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* BODY */
 body {
   background: #0d0d0d;
   color: #f5f5f5;
@@ -10,32 +12,45 @@ body {
   line-height: 1.6;
   padding: 2rem 1rem;
 }
+
+/* MAIN CONTAINER */
 .container {
   max-width: 700px;
   margin: 0 auto;
 }
+
+/* HEADING */
 h1 {
   font-size: 2rem;
   font-weight: 900;
   margin-bottom: 2rem;
   letter-spacing: -1px;
   text-transform: uppercase;
+  text-align: center;
 }
+
+/* MAIN GPA TABLE */
 .table-wrapper {
   border: 1px solid #333;
   margin-bottom: 2rem;
   overflow-x: auto;
+  border-radius: 10px;
 }
-table {
+
+/* GPA TABLE */
+.main-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
 }
-thead {
+
+/* TABLE HEADER */
+.main-table thead {
   background: #1a1a1a;
   border-bottom: 2px solid #333;
 }
-th {
+
+.main-table th {
   padding: 1rem;
   text-align: left;
   font-weight: 600;
@@ -44,21 +59,28 @@ th {
   letter-spacing: 1px;
   color: #999;
 }
-tbody tr {
+
+/* TABLE ROWS */
+.main-table tbody tr {
   border-bottom: 1px solid #222;
 }
-tbody tr:last-child {
+
+.main-table tbody tr:last-child {
   border-bottom: none;
 }
-td {
+
+.main-table td {
   padding: 1rem;
   vertical-align: middle;
 }
-td:first-child {
+
+.main-table td:first-child {
   color: #aaa;
   font-weight: 500;
   width: 25%;
 }
+
+/* INPUT BOX */
 input[type="number"] {
   width: 90px;
   padding: 0.5rem;
@@ -69,41 +91,56 @@ input[type="number"] {
   font-size: 0.9rem;
   outline: none;
   transition: border-color 0.2s;
+  border-radius: 5px;
 }
+
 input[type="number"]:focus {
   border-color: #666;
 }
+
+/* REMOVE ARROWS */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+/* GRADE */
 .grade-point {
   font-weight: 700;
   color: #ccc;
 }
+
 .grade {
   font-weight: 800;
   font-size: 1rem;
   letter-spacing: 1px;
   min-width: 30px;
 }
+
+/* BUTTONS SECTION */
 .actions {
   display: flex;
   gap: 1.5rem;
   margin-bottom: 2rem;
   align-items: center;
+  justify-content: center;
 }
+
+/* SUBJECT CONTROL */
 .subject-control {
   display: flex;
   gap: 0.75rem;
   align-items: center;
   border: 1px solid #333;
   padding: 0.75rem 1rem;
+  border-radius: 8px;
 }
+
 .subject-control span {
   text-transform: uppercase;
   font-weight: 600;
@@ -111,6 +148,8 @@ input[type="number"] {
   letter-spacing: 1px;
   color: #888;
 }
+
+/* + - BUTTONS */
 .icon-button {
   width: 32px;
   height: 32px;
@@ -124,14 +163,19 @@ input[type="number"] {
   justify-content: center;
   transition: all 0.15s;
   font-weight: bold;
+  border-radius: 6px;
 }
+
 .icon-button:hover {
   border-color: #666;
   background: #252525;
 }
+
 .icon-button:active {
   transform: scale(0.95);
 }
+
+/* CALCULATE BUTTON */
 .calculate-button {
   padding: 0.8rem 2rem;
   background: #f5f5f5;
@@ -145,15 +189,18 @@ input[type="number"] {
   transition: all 0.2s;
   flex: 1;
   max-width: 250px;
+  border-radius: 8px;
 }
+
 .calculate-button:hover {
   background: #e0e0e0;
 }
+
 .calculate-button:active {
   transform: scale(0.98);
 }
 
-/* KEY FIX: hidden by default, JS sets display:flex on calculate */
+/* RESULT BOX */
 .result {
   display: none;
   background: #1a1a1a;
@@ -161,64 +208,94 @@ input[type="number"] {
   padding: 1.5rem;
   min-height: 80px;
   align-items: center;
+  justify-content: center;
   font-size: 1rem;
   color: #f5f5f5;
   transition: all 0.3s;
-}
-.result .gpa-value {
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: #f5f5f5;
-  margin-left: 3rem;
-}
-@media (max-width: 600px) {
-  h1 {
-    font-size: 1.5rem;
-  }
-  th, td {
-    padding: 0.7rem 0.5rem;
-    font-size: 0.85rem;
-  }
-  input[type="number"] {
-    width: 70px;
-    padding: 0.4rem;
-  }
-  .actions {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .calculate-button {
-    max-width: 100%;
-  }
-  .result .gpa-value {
-    font-size: 1.5rem;
-    text-align: center;
-  } .grade-box {
-  width: 320px;
-  margin: 20px auto;
-  padding: 12px;
-  background: white;
-  border: 2px solid #4f46e5;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  margin-bottom: 2rem;
 }
 
-table {
+.result .gpa-value {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #f5f5f5;
+  margin-left: 1rem;
+}
+
+/* GRADE REFERENCE BOX */
+.grade-box {
+  width: 320px;
+  margin: 30px auto;
+  padding: 12px;
+  background: #111;
+  border: 2px solid #4f46e5;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* GRADE TABLE */
+.grade-box table {
   width: 100%;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
   font-size: 14px;
-  border: 1px solid #ddd;
 }
 
-th, td {
+/* GRADE TABLE CELLS */
+.grade-box th,
+.grade-box td {
   text-align: center;
   padding: 8px;
-  border: 1px solid #ddd; /* adds all side borders */
+  border: 1px solid #444;
 }
 
-th {
+/* HEADER */
+.grade-box th {
   background: #4f46e5;
   color: white;
+  font-weight: 700;
 }
+
+/* ROW COLORS */
+.grade-box tr:nth-child(even) {
+  background: #181818;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .main-table th,
+  .main-table td {
+    padding: 0.7rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  input[type="number"] {
+    width: 70px;
+    padding: 0.4rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .calculate-button {
+    max-width: 100%;
+  }
+
+  .result .gpa-value {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .grade-box {
+    width: 100%;
+    max-width: 320px;
+  }
 }
