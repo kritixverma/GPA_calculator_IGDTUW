@@ -203,7 +203,6 @@ input[type="number"] {
   transform: scale(0.98);
 }
 
-/* RESULT BOX */
 .result {
   display: none;
   background: #1a1a1a;
@@ -226,46 +225,43 @@ input[type="number"] {
   margin-left: 1rem;
 }
 
-/* GRADE REFERENCE BOX */
+
 .grade-box {
-  width: 320px;
+  max-width: 340px;
   margin: 30px auto;
-  padding: 12px;
-  background: #111;
   border: 2px solid #4f46e5;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #111;
 }
 
-/* GRADE TABLE */
 .grade-box table {
   width: 100%;
   border-collapse: collapse;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
 }
 
-/* GRADE TABLE CELLS */
 .grade-box th,
 .grade-box td {
+  padding: 12px;
   text-align: center;
-  padding: 8px;
   border: 1px solid #444;
 }
 
-/* HEADER */
 .grade-box th {
   background: #4f46e5;
   color: white;
-  font-weight: 700;
 }
 
-/* ROW COLORS */
-.grade-box tr:nth-child(even) {
-  background: #181818;
+.grade-box tr:last-child td {
+  border-bottom: none;
 }
 
-/* MOBILE RESPONSIVE */
+.grade-box th:last-child,
+.grade-box td:last-child {
+  border-right: none;
+}
+
+
 @media (max-width: 600px) {
 
   h1 {
